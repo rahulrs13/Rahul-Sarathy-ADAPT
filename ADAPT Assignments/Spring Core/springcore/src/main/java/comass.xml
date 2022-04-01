@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+   
+   <context:component-scan base-package="com.assign.spring"></context:component-scan>
+   
+   <bean id="addr" class="com.assign.spring.Address">
+   <property name="street" value="Omeqcstreet"></property>
+   <property name="city" value="Chennai"></property>
+   <property name="state" value="TamilNadu"></property>
+   <property name="zip" value="6000028"></property>
+   <property name="country" value="India"></property>
+   </bean>
+   <bean id="Cust" class="com.assign.spring.Customer">
+   <property name="customerID" value="1"></property>
+   <property name="customerName" value="Rahul"></property>
+   <property name="customerContact" value="987654321"></property>
+   <property name="customerAddress" ref="addr"></property>
+   </bean>
+   
+   <bean id="ques" class="com.assign.spring.Question">
+   <property name="questionid" value="1"></property>
+   <property name="question" value="How are you?"></property>
+   <property name="answers">
+   <list>
+   <value>I am fine </value>
+   <value>Fine and doing good</value>
+   </list>
+   </property>
+   <property name="answers1">
+   <set>
+   <value> I am OK!</value>
+   <value>I am having fun</value>
+   </set>
+   </property>
+   <property name="answers2">
+   <map>
+   <entry key= "1" value="I am very Bad"/>
+   <entry key ="2" value ="I am stressed"/>
+   </map>
+   </property>
+   </bean>
+   <bean id="bnka" class="com.assign.spring.Bankaccount">
+   <property name="accountId" value="892671930"></property>
+   <property name="accountHolderName" value="Rahul"></property>
+   <property name="accountType" value="Savings"></property>
+   <property name="accountBalance" value="2000"></property>
+   </bean>
+   <bean id="sil" class="com.assign.spring.BankAccountServiceImpl"></bean>
+   <bean id="ril" class="com.assign.spring.BankAccountepositoryImpl"></bean>
+     
+     <bean id="bcon" class="com.assign.spring.BankAccountController">
+    
+     </bean>
+   </beans>
